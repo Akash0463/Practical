@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+<head>    <title>Student Registration</title>
+</head>
+<body>
+    <form name="f1" onsubmit="return validateform()">
+    <div>
+        <label for="fname">First Name</label><br>
+        <input type="text" id="fname",name="fname">
+    </div>
+    <div>
+        <label for="lname">Last Name</label><br>
+        <input type="text" id="lname",name="lname">
+    </div>
+   
+    <div>
+        <label for="mobile">Mobile Number</label><br>
+        <input type="text" name="mobile" id="mobile">
+    </div>
+    <div>
+        <label for="age">Age</label><br>
+        <input type="number" name="age",id="age">
+    </div>
+   
+    <br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+<script type="text/javascript">
+    function validateform(){
+        var fname=document.f1.fname.value;
+        var lname=document.f1.lname.value;
+       
+        var age=document.f1.age.value;
+        var age1=parseInt(age,10);
+        if(fname==""||fname==null){
+            alert("First name can't be blank");  
+            return false;
+        }
+        if(lname==""||lname==null){
+            alert("Last name can't be blank");  
+            return false;
+        }
+        if( age1>18 && age1<50);
+        else{
+            alert("Age is not in limit");
+         
+          return false;
+        }
+        for(let i=0;i<fname.length;i++){
+            if(!isNaN(fname.charAt(i))){
+                alert("Name can't contain numbers");
+               return false;
+            }
+        }
+        for(let i=0;i<lname.length;i++){
+            if(!isNaN(lname.charAt(i))){
+                alert("Name can't contain numbers");
+                return false;
+            }
+        }
+    }
+    </script>
+</html>

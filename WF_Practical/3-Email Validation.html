@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Login </title>
+</head>
+<body>
+    <form name="f1" onsubmit="return validateform()">
+        <table>
+            <tr>
+                <td>Email_Id:</td>
+                <td><input type="text" name = "name" required></td>
+            </tr>
+            <br>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name = "pass" required></td>
+            </tr>
+            <br>
+            <tr>
+                <td></td>
+                <td><input type="submit" name = "login" value="Login"></td>
+            </tr>
+            <br>
+        </table>
+    </form>
+    <script>
+        function validateform(){
+            var email = document.f1.name.value;
+            var pass = document.f1.pass.value;
+            var pat = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!pat.test(email))
+            {
+                alert("Please enter a valid email address..");
+            } 
+
+            if (email == "abc@gmail.com" && pass =="12345" )
+            {
+                document.write("Logged in successfully..")
+            }
+            else{
+                alert("Incorrect");
+            }
+
+          } 
+
+    </script>
+</body>
+</html>

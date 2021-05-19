@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    <title>Employee Registration</title>
+</head>
+<body>
+    <form name="f1" onsubmit="return validateform()">
+     <table>
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" name="fname" required><br>
+
+            </tr>
+    	    <tr>
+                <td>Last Name:</td>
+                <td><input type="text" name="lname" required><br>
+
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td><input type="text" name="gender" required><br>
+
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><input type="text" name="age" required><br>
+
+            </tr>
+                        
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="email" required><br>
+
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><input type="text" name="add" required><br>
+
+            </tr>
+            
+             <tr>
+                <td>DOB:</td>
+                <td><input type="date" name="dob" required><br>
+
+            </tr>
+
+            <tr>
+                <td>Joining date:</td>
+                <td><input type="date" name="jdate" ><br>
+
+            </tr>
+            <tr>
+                <td>Salary:</td>
+                <td><input type="number" name="sal" ><br>
+
+            </tr>
+           
+            <tr>
+                <td></td>
+                <td><input type="submit" name= "reg" value="Register"></td>   
+            </tr>
+        </table>
+    </form>
+
+<script>
+    function validateform(){
+        var fname=document.f1.fname.value;
+        var lname=document.f1.lname.value;
+        var gender=document.f1.gender.value;
+        var age=document.f1.age.value;
+        var email=document.f1.email.value;
+        var address=document.f1.add.value;
+        var dob = new Date(document.f1.dob.value);
+        var cdate = new Date();
+        var joindate = new Date(document.f1.jdate.value);
+        var sal = document.f1.sal.value;
+        var sal1 = parseInt(sal,10);
+
+        if(fname==""||fname==null){
+            alert("First name can't be blank");  
+            return false;
+        }
+        if(lname==""||lname==null){
+            alert("Last name can't be blank");  
+            return false;
+        }
+
+        
+
+        if( cdate.getFullYear() - dob.getFullYear() > 18 ) 
+            {
+                if(cdate.getFullYear() - joindate.getFullYear() > 1)      
+                { 
+                    if(sal1 <= 20000 )                       
+                    {
+                        alert("Salary can't be less than 20000..");
+                        return false;
+                    }
+                    
+                }
+                else
+                {
+                    if(sal1 > 20000)
+                    {
+                        alert("fresher's salary cannot be more than 20000..");
+                        return false;
+                    }
+                }
+                
+            }   
+            else     
+            {
+                alert("You are not 18+..So u cannot register..Sorry");
+                return false;
+            }     
+        }
+        
+       
+    
+    </script>
+</body>
+</html>
